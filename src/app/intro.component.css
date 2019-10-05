@@ -1,0 +1,45 @@
+.intro-container {
+  background-color: rgb(24, 23, 23);
+  background-image: url('./../assets/intro.jpg');
+  background-blend-mode: overlay;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+.flex-container { 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+/* #name {color: rgba(80, 64, 231);} */
+.btn-cont {
+  background-color: rgb(24, 23, 23);
+  position: relative;
+  bottom: 0;
+  margin-top: 2em;
+  animation-name: 'invisible';
+  animation-duration: 3s;
+}
+a {
+  color: #fff;
+}
+button {
+  background: rgba(92, 75, 243, 0.5);
+  font-size: 1.3em;
+  animation-name: 'slideup';
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 3s;
+}
+button:hover {
+  background: rgba(92, 75, 243, 0.9);
+  border: solid 1px white;
+}
+h1 {
+  animation-name: 'slidedown';
+  animation-duration: 1.2s;
+}

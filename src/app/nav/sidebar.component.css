@@ -1,0 +1,44 @@
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  opacity: 0.9;
+  z-index: 4;
+  overflow-x: hidden; 
+  background-color: black;
+  transition: width 0.6s ease-out;
+}
+#sideMenu li {
+  list-style-type: none;
+  margin: auto;
+  margin-top: 3em;
+  text-align: center;
+}
+#sideMenu li > a {
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  animation-duration: 1s;
+}
+#sideMenu li > a:hover {
+  font-size: 1.8em;
+  font-weight: bolder;
+}
+.menuIcon {
+  z-index: 6;
+  position: absolute;
+  opacity: 0.5;
+  bottom: 2em;
+  left: 2em;
+  cursor: pointer;
+  animation-name: 'appear';
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 4;
+}
+.menuIcon:hover {
+  opacity: 1;
+}

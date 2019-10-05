@@ -1,0 +1,114 @@
+#myPic {
+  width: 85%;
+  height: 23em;
+  background-color: rgb(24, 23, 23);
+  background-image: url('./../../assets/sherlock.jpg');
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+  margin: 2em 2em;
+  /* border-radius: 40%; */
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+}
+.caption {
+  position: absolute;
+  bottom: -1em;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: rgb(24, 23, 23);
+  font-size: 1.2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.design-caption {
+  bottom: -5em;
+  color: rgb(80, 64, 231);
+}
+#profiletext {
+  position: relative;
+  bottom: 0;
+  font-size: 1em;
+}
+h4 {color: rgb(80, 64, 231);}
+.img-small {
+  height: 10em;
+  width: 100%;
+  background: rgb(24, 23, 23);
+  border-radius: 40%;
+}
+#preview {
+  width: 100%;
+  height: 23em;
+  background-color: rgb(24, 23, 23);
+  background-image: url('./../../assets/therapy.PNG');
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+  margin: 2em 2em;
+  /* border-radius: 40%; */
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+}
+#fast {
+  background-color: rgb(24, 23, 23);
+  background-image: url('./../../assets/fast.jpg');
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+#ui {
+  background-color: rgb(24, 23, 23);
+  background-image: url('./../../assets/UX.jpg');
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+#backend {
+  background-color: rgb(24, 23, 23);
+  background-image: url('./../../assets/back-end.jpg');
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+.row {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+.progress {
+  width: 100%;
+  background: none;
+}
+.progress-bar {
+  background-color: rgb(80, 64, 231);
+  transition: width 2s ease-in-out;
+  -webkit-transition: width 2s ease-in-out;
+}
+.progressSlide {
+  animation-name: 'progress';
+  animation-duration: 3s;
+}
+@keyframes progress {
+  from {width: 0;}
+  to {width: 100%;}
+}
+.container {
+  margin-top: 3em;
+}
+.skill-container {
+  width: 90%;
+  margin: auto;
+}
+em {
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+.label {
+  color: rgb(65, 60, 60);
+  font-size: 1.1em;
+}

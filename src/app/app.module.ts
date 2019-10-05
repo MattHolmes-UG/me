@@ -1,16 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from "@angular/router";
 
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
+import { 
+  ProjectDetailComponent,
+  ProjectListComponent,
+  ProjectSliderComponent
+ } from "./projects/index";
+import { NavBarComponent } from './nav/nav-bar.component';
+import { route } from './routes';
+import { ProfileComponent } from './profile/profile.component';
+import { IntroPageComponent } from './intro.component';
+import { SideNavComponent } from './nav/sidebar.component';
+import { ContactComponent } from './contact.component';
+import { WindowRef } from './services/windowRef';
 
 @NgModule({
   declarations: [
-    AppComponent
+    HomeComponent,
+    ProjectDetailComponent,
+    ProjectListComponent,
+    NavBarComponent,
+    ProfileComponent,
+    IntroPageComponent,
+    SideNavComponent,
+    ContactComponent,
+    ProjectSliderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(route, {anchorScrolling: 'enabled'})
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    WindowRef
+  ],
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

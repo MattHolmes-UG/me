@@ -1,1 +1,194 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #fff;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: 1.2s;
+}
+.change .bar1 {
+  transform: rotate(-45deg) translate(-8px, 5px);
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {opacity: 0;}
+.change .bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+}
+.bar1, .bar2, .bar3 {
+  width: 35px; 
+  height: 5px; 
+  background-color: #fff; 
+  margin: 6px 0;
+  transition: 0.4s;
+}
+img {
+  margin-top: 1.5em;
+}
+footer {
+  background: rgb(24, 23, 23);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 5vh;
+  height: 13vh;
+  color: rgb(123, 123, 128);
+  font-weight: bold;
+  font-variant: small-caps;
+  border-top: solid 3px rgb(80, 64, 231);
+}
+.slant {
+  transform: rotateZ(-15deg) translateX(475px) translateY(-115px);
+}
+.anti-slant {
+  transform: rotateZ(15deg) translateX(-430px) translateY(225px);
+}
+h2 {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+}
+/* includes one delay factor */
+.slidefromleft { 
+  animation-name: 'movefromleft';
+  animation-duration: 2s;
+  animation-delay: 0s;
+}
+.slidefromleft1 { 
+  animation-name: 'movefromleft';
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+.slidefromleft2 {
+  animation-name: 'movefromleft';
+  animation-duration: 1s;
+  animation-delay: 3.0s;
+}
+.slidefromleft3 {
+  animation-name: 'movefromleft';
+  animation-duration: 1s;
+  animation-delay: 3s;
+}
+.slidefromright { 
+  animation-name: 'movefromright';
+  animation-duration: 2s;
+  animation-delay: 0s;
+}
+.slidefromright1 { 
+  animation-name: 'movefromright';
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+.slidefromright2 {
+  animation-name: 'movefromright';
+  animation-duration: 1s;
+  animation-delay: 3.0s;
+}
+.slidefromright3 {
+  animation-name: 'movefromright'; 
+  animation-duration: 1s;
+  animation-delay: 3s;  
+}
+.invisible1 {
+  animation-name: 'invisible';
+  animation-duration: 1s;
+}
+.invisible2 {
+  animation-name: 'invisible';
+  animation-duration: 3.0s;
+}
+.slidedown {
+  animation-name: 'slidedown';
+  animation-duration: 1s;
+}
+.slideup {
+  animation-name: 'slideup';
+  animation-duration: 1s;
+}
+.appear {
+  animation-name: 'appear';
+  animation-duration: 1s;
+}
+@keyframes movefromright {
+  from {opacity: 0;
+    transform: translateX(300px);
+  }
+  to {opacity: 1;
+    transform: translateX(0);}
+}
+@-webkit-keyframes movefromright {
+  from {opacity: 0;
+    transform: translateX(300px);
+  }
+  to {opacity: 1;
+    transform: translateX(0);}
+}
+@keyframes movefromleft {
+  from {opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {opacity: 1;
+    transform: translateX(0);}
+}
+@-webkit-keyframes movefromleft {
+  from {opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {opacity: 1;
+    transform: translateX(0);}
+}
+@keyframes slidedown {
+  from {opacity: 0;
+    transform: translateY(-300px);
+  }
+  to {opacity: 1;
+    transform: translateY(0);}
+}
+@-webkit-keyframes slidedown {
+  from {opacity: 0;
+    transform: translateY(-300px);
+  }
+  to {opacity: 1;
+    transform: translateY(0);}
+}
+@keyframes slideup {
+  from {opacity: 0;
+    transform: translateY(300px);
+  }
+  to {opacity: 1;
+    transform: translateY(0);}
+}
+@-webkit-keyframes slideup {
+  from {opacity: 0;
+    transform: translateY(300px);
+  }
+  to {opacity: 1;
+    transform: translateY(0);}
+}
+@keyframes invisible {
+  from {opacity: 0;}
+  to {opacity: 0;}
+}
+@-webkit-keyframes invisible {
+  from {opacity: 0;}
+  to {opacity: 0;}
+}
+@keyframes appear {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+@-webkit-keyframes appear {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+.design-caption {
+  font-size: 1.2em;
+}
+.caption {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: rgb(24, 23, 23);
+  font-size: 1.2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
