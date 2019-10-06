@@ -1,6 +1,6 @@
 .intro-container {
   background-color: rgb(24, 23, 23);
-  background-image: url('./../assets/intro.jpg');
+  background-image: url('/assets/intro.jpg');
   background-blend-mode: overlay;
   height: 100vh;
   color: #fff;

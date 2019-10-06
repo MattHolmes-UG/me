@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
+import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { HomeComponent } from './home.component';
 import { 
@@ -14,10 +16,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { IntroPageComponent } from './intro.component';
 import { SideNavComponent } from './nav/sidebar.component';
 import { ContactComponent } from './contact.component';
-import { WindowRef } from './services/windowRef';
+import { ProjectService } from './services/projects.service';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     HomeComponent,
     ProjectDetailComponent,
     ProjectListComponent,
@@ -30,11 +34,13 @@ import { WindowRef } from './services/windowRef';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(route, {anchorScrolling: 'enabled'})
+    RouterModule.forRoot(route, {anchorScrolling: 'enabled'}),
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [
-    WindowRef
+    ProjectService
   ],
-  bootstrap: [HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
+import { ProjectService } from '../services/projects.service';
 
 @Component({
   selector: 'nav-bar',
   template: `
-    <nav class="navbar navbar-expand-md" #nav>
+    <nav class="navbar navbar-expand-md" id="navbar" #nav>
       <ul class="nav nav-tabs">
         <li class="nav-item" *ngFor="let link of navs">
           <a [routerLink]="['/']" [fragment]=link.href class="nav-link" #links>{{link.title}}</a>
@@ -17,11 +18,15 @@ import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular
 export class NavBarComponent implements OnInit{
   @ViewChild('nav') navdiv: ElementRef
   @ViewChildren('links') links: any
-  navs: any = [{ title: 'Home', href: 'home' }, { title: 'About Me', href: 'about' }, 
-    { title: 'Projects', href: 'projects' }, { title: 'Contact Me', href: 'contact' }]
+  navs: any
   menu: boolean = false;
 
+  constructor(private projectService: ProjectService){
+
+  }
+
   ngOnInit() {
+    this.navs = this.projectService.getNavLinks();
     window.addEventListener('scroll', () => {
       const nav = this.links._results.map(el => {return el.nativeElement})
       nav.forEach(link => { link.classList.remove('active')})

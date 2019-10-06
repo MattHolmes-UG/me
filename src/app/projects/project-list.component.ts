@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, ViewChildren } from '@angular/core';
-import { QueryList } from '@angular/core/src/render3';
+import { ProjectService } from '../services/projects.service';
 
 @Component({
   selector: 'project-list',
@@ -29,13 +29,16 @@ import { QueryList } from '@angular/core/src/render3';
 })
 
 export class ProjectListComponent implements OnInit {
-  projects: any = PROJECTS
+  projects: any
   @ViewChildren('projects') projectsdiv: any
   @ViewChild('title') title: ElementRef
 
+  constructor(private projectService: ProjectService) {
+    this.projects = this.projectService.getProjects();
+  }
   ngOnInit() {
     window.addEventListener('scroll', () => {
-      const arr = this.projectsdiv._results.map(elementRef => {return elementRef.nativeElement});
+      const arr = this.projectsdiv._results.map(elementRef => { return elementRef.nativeElement });
       this.title.nativeElement.style.visibility = 'hidden'
       arr.forEach(element => {
         element.style.visibility = 'hidden'
@@ -46,38 +49,15 @@ export class ProjectListComponent implements OnInit {
       }
       if (pageYOffset > 1490) {
         arr.forEach((element, index) => {
-          if (index%2===0) {
+          if (index % 2 === 0) {
             element.style.visibility = 'visible';
             element.classList.add('slidefromright');
           } else {
-              element.style.visibility = 'visible';
-              element.classList.add('slidefromleft');
+            element.style.visibility = 'visible';
+            element.classList.add('slidefromleft');
           }
         });
       }
     })
   }
-
 }
-const PROJECTS = [
-  {
-    title: 'Therapy.com',
-    imageUrl: './../../../assets/therapy.PNG',
-    description: 'Website for online therapy with nodejs'
-  },
-  {
-    title: 'mattholmes_ug.com',
-    imageUrl: './../../../assets/portfolio.PNG',
-    description: 'Portfolio site Built with Angular'
-  },
-  {
-    title: 'purplebynk.com',
-    imageUrl: './../../../assets/purple.jpg',
-    description: "Doesn't exist yet but we are getting there"
-  },
-  {
-    title: 'Scientific calculator',
-    imageUrl: './../../../assets/calc2.PNG',
-    description: 'Scientific calculator build with pure javascript'
-  }
-]

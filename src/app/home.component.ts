@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, ElementRef, ContentChildren } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'home-page',

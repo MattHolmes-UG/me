@@ -5,7 +5,10 @@ import { ProfileComponent } from './profile/profile.component';
 
 export const route: Routes = [
   // {path: '', redirectTo: '/projects', pathMatch: 'full'},
-  { path: 'projects', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'projects', redirectTo: '/#projects', pathMatch: 'full' },
+  { path: 'aboutme', redirectTo: '/#about', pathMatch: 'full' },
+  { path: 'contactme', redirectTo: '/#contact', pathMatch: 'full' },
   { path: 'projects/:id', component: ProjectDetailComponent },
-  { path: '#about', component: ProfileComponent },
+  { path: 'project', component: ProjectDetailComponent },
 ]

@@ -1,10 +1,11 @@
-import { Component, ViewChildren, ElementRef } from '@angular/core';
+import { Component, ViewChildren, ElementRef, OnInit } from '@angular/core';
+import { ProjectService } from '../services/projects.service';
 
 @Component({
   selector: 'side-nav',
   template: `
   <nav class="anti-slant" id="sideMenu" [style.width]="menuOn===true ? '100%' : '0'"
-    (click)="toggleMenu()">
+    (click)="toggleMenu()" #nav>
     <ul class="nav flex-column">
       <li class="nav-item" *ngFor="let link of navs">
         <a [routerLink]="['/']" [fragment]=link.href class="nav-link" #links>{{link.title}}</a>
@@ -19,16 +20,18 @@ import { Component, ViewChildren, ElementRef } from '@angular/core';
   `,
   styleUrls: ['./sidebar.component.css']
 })
-export class SideNavComponent {
+export class SideNavComponent implements OnInit {
   menuOn: boolean = false;
   @ViewChildren('links') links: any
-  navs: any = [{ title: 'Home', href: 'home' }, { title: 'About Me', href: 'about' },
-  { title: 'Projects', href: 'projects' }, { title: 'Contact Me', href: 'contact' }]
-  private bodyEl: HTMLBodyElement
+  navs: any
+  private bodyEl: any = document.activeElement
   private navEl: HTMLElement
-  constructor(ref: ElementRef) {
+  constructor(ref: ElementRef, private projectService: ProjectService) {
     this.navEl = ref.nativeElement
-    this.bodyEl = ref.nativeElement.offsetParent
+  }
+  
+  ngOnInit() {
+    this.navs = this.projectService.getNavLinks();
   }
 
   toggleMenu() {
