@@ -8,11 +8,13 @@ import { ProjectService } from '../services/projects.service';
     <h2 #title>PROJECTS</h2>
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-6" *ngFor='let project of projects' #projects>
-        <h3>{{project.title}}</h3>
-        <div class="img-cont">
-          <img [src]=project.imageUrl class="img img-responsive"/>
-        </div>
-        <span class="caption">{{project?.description}}</span>
+        <h3>{{project?.title}}</h3>
+        <a [href]=project?.link>
+          <div class="img-cont">
+            <img [src]=project.imageUrl class="img img-responsive"/>
+          </div>
+          <span class="caption">{{project?.description}}</span>
+        </a>
       </div>
     </div>
   </div>
@@ -25,6 +27,8 @@ import { ProjectService } from '../services/projects.service';
     h3 {font-variant: small-caps; margin-top: 2em;}
     h2 {margin-bottom: 1em;}
     * {text-align: center;}
+    a {text-decoration: none;}
+    a:hover {text-decoration: underline;}
   `]
 })
 

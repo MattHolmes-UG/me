@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
 })
 
 export class ProjectDetailComponent {
-  project: {} = {
+  project = {
     id: 1,
     title: 'Therapy.com',
     imageUrl: '/assets/therapy.PNG',
