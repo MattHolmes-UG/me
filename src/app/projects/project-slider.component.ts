@@ -6,14 +6,15 @@ import { ProjectService } from '../services/projects.service';
   template: `
   <owl-carousel [options]="carouselOptions" [items]="slideStore" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item" *ngFor="let image of slideStore">
-      <img class="slide-image" [src]=image/>
+      <div class="slide-image" [style.background-image]="'url('+image+')'"></div>
     </div>
   </owl-carousel>
   `,
   styles: [`
-    img {margin-top: 0; width: 100% !important; min-height: 22em;}
-    @media screen and (max-width: 1000px){img {height: 27em;}}
-    @media screen and (max-width: 480px){img {height: auto;}}
+    img {}
+    .slide-image {background-size: cover; background-position: center; margin-top: 0; width: 100% !important; height: 22em;}
+    @media screen and (max-width: 1112px){img {height: 14em;}}
+    @media screen and (max-width: 700px){img {height: auto;}}
   `]
 })
 
