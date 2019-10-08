@@ -2,7 +2,7 @@
 body {
   background-color: #fff;
   color: black;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: 1.2s;
 }
 .change .bar1 {
@@ -191,4 +191,37 @@ h2 {
   color: rgb(24, 23, 23);
   font-size: 1.2em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* for owl carousel */
+.owl-stage-outer {
+  margin-top: 4em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+  /* border-top: solid 3px rgba(20, 19, 22, 0.8);
+  border-bottom: solid 3px rgba(20, 19, 22, 0.8); */
+}
+.owl-nav {
+  position: absolute;
+  color: #fff;
+  top: 43%;
+  margin-left: 0.9em;
+  width: 100%;
+  font-size: 2em;
+}
+.owl-prev {
+  float: left;
+  width: 2em;
+  background-color: rgba(189, 183, 183, 0.5) !important;
+}
+.owl-next {
+  float: right;
+  width: 2em;
+  background-color: rgba(189, 183, 183, 0.5) !important;
+  margin-right: 1em !important;
+}
+.owl-prev:hover, .owl-next:hover {
+  background-color: rgba(189, 183, 183, 0.8) !important;
+}
+.owl-dots {
+  margin-top: -1em;
 }

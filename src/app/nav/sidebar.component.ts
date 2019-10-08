@@ -24,7 +24,7 @@ export class SideNavComponent implements OnInit {
   menuOn: boolean = false;
   @ViewChildren('links') links: any
   navs: any
-  private bodyEl: any = document.activeElement
+  private bodyEl: any = document.body
   private navEl: HTMLElement
   constructor(ref: ElementRef, private projectService: ProjectService) {
     this.navEl = ref.nativeElement

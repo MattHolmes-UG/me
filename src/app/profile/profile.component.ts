@@ -16,18 +16,30 @@ export class ProfileComponent implements OnInit {
   @ViewChild('skills') skilldiv: ElementRef
   @ViewChild('slide') slide: ElementRef
   preview: any
+  slides: any
   index: number = 0
+  responsiveObj = {
+    0: {
+      items: 1
+    },
+    700: {
+      items: 1
+    },
+    1000: {
+      items: 1
+    }
+  }
 
   constructor(private projectService: ProjectService) {
 
   }
 
   ngOnInit() {
+    this.slides = this.projectService.getProjects().map(project => project.imageUrl).reverse();
     this.preview = this.slide.nativeElement.childNodes[0];
     this.title.nativeElement.style.visibility = 'hidden'
     this.firstrow.nativeElement.style.visibility = 'hidden'
     this.secondrow.nativeElement.style.visibility = 'hidden'
-    this.startslides();
 
     window.addEventListener('scroll', () => {
       const progress = [...this.progressdivs._results.map(elementRef => { return elementRef.nativeElement })]
@@ -55,19 +67,16 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
-  startslides() {
-    let slides = this.projectService.getProjects().filter(project => project.title !== 'Scientific calculator')
-      .map(project => project.imageUrl).reverse();
-    setInterval(() => {
-      if (this.index >= slides.length) this.index = 0
-      if (this.index < slides.length) {
-        this.preview.src = slides[this.index]
-        this.preview.classList.remove('appear')
-        setTimeout(() => { this.preview.classList.add('appear')}, 80); //to add a fade in effect
-      }
-      this.index += 1
-    }, 6000);
-  }
+  // startslides() {
+    
+  //   setInterval(() => {
+  //     if (this.index >= slides.length) this.index = 0
+  //     if (this.index < slides.length) {
+  //       this.preview.src = slides[this.index]
+  //     }
+  //     this.index += 1
+  //   }, 6000);
+  // }
 }
 const SKILLS = [
   {

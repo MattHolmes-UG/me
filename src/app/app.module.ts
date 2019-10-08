@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { CarouselModule } from "ngx-owl-carousel-o";
+import { OwlModule } from "ngx-owl-carousel";
 
 import { HomeComponent } from './home.component';
 import { 
@@ -36,7 +36,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     RouterModule.forRoot(route, {anchorScrolling: 'enabled'}),
     BrowserAnimationsModule,
-    CarouselModule
+    OwlModule
   ],
   providers: [
     ProjectService

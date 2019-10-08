@@ -10,17 +10,17 @@
     </div>
     <div class="col-md-6" style="margin-top: 6em; text-align: center;">
       <div class="row" #designs>
-        <div class="col-md-4 col-sm-12 p-2">
+        <div class="col-xs-4">
           <div id="fast" class="img-small" #profilepic>
-            <caption class="design-caption caption">Responsive &amp; Fast Design</caption>
+            <caption class="design-caption caption">Fast UI/UX</caption>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12 p-2">
+        <div class="col-xs-4">
           <div id="ui" class="img-small" #profilepic>
-            <caption class="design-caption caption">UI/UX Design</caption>
+            <caption class="design-caption caption">Responsive UI</caption>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12 p-2">
+        <div class="col-xs-4">
           <div id="backend" class="img-small" #profilepic>
             <caption class="design-caption caption">Back-End Design</caption>
           </div>
@@ -82,7 +82,7 @@
       </div>
     </div>
     <div class="col-md-6 slide col-xs-12" #slide>
-      <img class="preview" #slideshow>
+      <slider [slides]="slides" [responsiveObj]="responsiveObj"></slider>
     </div>
   </div>
 </div>

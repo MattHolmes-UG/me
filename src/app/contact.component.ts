@@ -11,6 +11,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
       margin-top: 3em; cursor: pointer}
     .contact:hover {color: rgb(80, 64, 231); text-decoration: none;}
     .collapse {width: 100%; height: 100%; transition: width 2s;}
+    @media screen and (max-width: 480px){
+      h3 {font-size: 1.2em;}
+      h2 {font-size: 1.5em;}
+      .contact {font-size: 0.75em;}
+    }
   `]
 })
 export class ContactComponent implements OnInit{

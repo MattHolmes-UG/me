@@ -1,56 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProjectService } from '../services/projects.service';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'slider',
   template: `
-  <div class="container">
-    <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let slide of slideStore">
-        <ng-template carouselSlide [id]="slide.id">
-          <img [src]="slide.imageUrl"/>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
-  </div>
+  <owl-carousel [options]="carouselOptions" [items]="slideStore" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    <div class="item" *ngFor="let image of slideStore">
+      <img class="slide-image" [src]=image/>
+    </div>
+  </owl-carousel>
   `,
   styles: [`
-    // .owl-item {width: 23em !important; background-color: grey !important;}
-    // img {margin-top: 0; object-fit: cover; height: 10em !important; width: 23em !important;}
+    img {margin-top: 0; width: 100% !important; min-height: 22em;}
+    @media screen and (max-width: 1000px){img {height: 27em;}}
+    @media screen and (max-width: 480px){img {height: auto;}}
   `]
 })
 
 export class ProjectSliderComponent implements OnInit {
+  @Input() slides
+  @Input() responsiveObj
   slideStore: any
 
   constructor(private projectService: ProjectService) {
-
+    
   }
 
   ngOnInit() {
-    this.slideStore = this.projectService.getProjects().filter(project => project.title !== 'Scientific calculator')
+    this.slideStore = this.slides
+    this.carouselOptions.responsive = this.responsiveObj
+    console.log(this.carouselOptions)
+    console.log(this.responsiveObj)
   }
-  customOptions: OwlOptions = {
+  carouselOptions:any = {
     loop: true,
     autoplay: true,
-    autoHeight: false,
-    autoplaySpeed: 2000,
-    dots: false,
+    autoplaySpeed: 5000,
+    dots: true,
+    autoplayHoverPause: true,
+    animateIn: true,
+    margin: 40,
+    mouseDrag: true,
+    touchDrag: true,
+    center: true,
     navSpeed: 1000,
-    navText: ['<div class="fa fa-arrow-left"></div>','<div class="fa fa-arrow-right"></div>'],
-    responsiveRefreshRate: 100,
-    responsive: {
-      0: {
-        items: 1
-      },
-      740: {
-        items: 2
-      },
-      1000: {
-        items: 3
-      }
-    },
-    nav: false
+    nav: true,
+    navText: ['<div class="fa fa-angle-double-left"></div>','<div class="fa fa-angle-double-right"></div>'],
   }
 }
