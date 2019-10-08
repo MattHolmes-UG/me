@@ -30,8 +30,6 @@ export class ProjectSliderComponent implements OnInit {
   ngOnInit() {
     this.slideStore = this.slides
     this.carouselOptions.responsive = this.responsiveObj
-    console.log(this.carouselOptions)
-    console.log(this.responsiveObj)
   }
   carouselOptions:any = {
     loop: true,
