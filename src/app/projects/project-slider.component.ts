@@ -13,8 +13,10 @@ import { ProjectService } from '../services/projects.service';
   styles: [`
     img {}
     .slide-image {background-size: cover; background-position: center; margin-top: 0; width: 100% !important; height: 22em;}
-    @media screen and (max-width: 1112px){img {height: 14em;}}
-    @media screen and (max-width: 700px){img {height: auto;}}
+    @media screen and (max-width: 1112px){.slide-image {height: 16em;}}
+    @media screen and (max-width: 700px){.slide-image {height: 22em;}}
+    @media screen and (max-width: 500px){.slide-image {height: 12em;}}
+    @media screen and (max-width: 330px){.slide-image {height: 11em;}}
   `]
 })
 

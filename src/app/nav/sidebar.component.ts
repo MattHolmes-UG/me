@@ -1,4 +1,4 @@
-import { Component, ViewChildren, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChildren, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProjectService } from '../services/projects.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { ProjectService } from '../services/projects.service';
       </li>
     </ul>
   </nav>
-  <div class="menuIcon" [class.change]="menuOn===true" (click)="toggleMenu()">
+  <div class="menuIcon" [class.change]="menuOn===true" (click)="toggleMenu()" #menuIcon>
     <div class="bar1"></div>
     <div class="bar2"></div>
     <div class="bar3"></div>
@@ -22,6 +22,7 @@ import { ProjectService } from '../services/projects.service';
 })
 export class SideNavComponent implements OnInit {
   menuOn: boolean = false;
+  @ViewChild('menuIcon') menuicon: any
   @ViewChildren('links') links: any
   navs: any
   private bodyEl: any = document.body
@@ -29,7 +30,7 @@ export class SideNavComponent implements OnInit {
   constructor(ref: ElementRef, private projectService: ProjectService) {
     this.navEl = ref.nativeElement
   }
-  
+
   ngOnInit() {
     this.navs = this.projectService.getNavLinks();
   }
@@ -38,14 +39,14 @@ export class SideNavComponent implements OnInit {
     const link = this.links._results
     this.menuOn = !this.menuOn
     if (this.menuOn !== null) {
-      link[0].nativeElement.classList.toggle('slidefromleft')
-      link[1].nativeElement.classList.toggle('slidefromright')
-      link[2].nativeElement.classList.toggle('slidefromleft')
-      link[3].nativeElement.classList.toggle('slidefromright')
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+        link[0].nativeElement.classList.toggle('slidefromleft')
+        link[1].nativeElement.classList.toggle('slidefromright')
+        link[2].nativeElement.classList.toggle('slidefromleft')
+        link[3].nativeElement.classList.toggle('slidefromright')
         this.navEl.classList.toggle('anti-slant');
         this.bodyEl.classList.toggle('slant');
-      }
+      } else { this.menuicon.nativeElement.style.display = 'none' }
     }
     return this.menuOn
   }

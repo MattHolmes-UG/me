@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
       <a class="link" [href]=project.link><h2>{{project.title}}</h2></a>
       <slider [responsiveObj]="responsiveObj" [slides]="slides"></slider>
       <p class="description">{{project.description}} <a [href]="project.link" target="_blank" class="link"
-        >Click to go to site</a></p><br>
+        >Click to go to site</a></p>
       <div class="toollist">
         <span class="listtext">Some design tools used in the project include: </span><br>
         <ul>
@@ -20,14 +20,15 @@ import { ActivatedRoute } from '@angular/router';
     </div>
   `,
   styles: [`
-    * {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+    * {font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
     h2 {margin: 0; font-variant: small-caps;}
-    .description {margin-left: 2em; font-size: 1.1em; margin-top: 1em;}
+    .description {margin-left: 1em; font-size: 1em; margin-top: 1em;}
     .toollist {font-variant: small-caps; padding-bottom: 6em !important;}
-    .listtext {margin-left: 2em; font-size: 1.3em; padding: 0.8em 0;}
-    ul {list-style-type: circle; margin: 1em 1em 2em;}
+    .listtext {margin-left: 1em; font-size: 1.3em; display: block;}
+    ul {list-style-type: circle; margin: 0.2em 1em 2em;}
     li {margin-bottom: 1em;}
     .link {color: black;}
+    @media screen and (max-width: 480){padding-left: 0;}
   `]
 })
 

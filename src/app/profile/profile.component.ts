@@ -38,14 +38,13 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.slides = this.projectService.getProjects().map(project => project.imageUrl).reverse();
     this.preview = this.slide.nativeElement.childNodes[0];
-    this.title.nativeElement.style.visibility = 'hidden'
-    this.firstrow.nativeElement.style.visibility = 'hidden'
-    this.secondrow.nativeElement.style.visibility = 'hidden'
-
     window.addEventListener('scroll', () => {
       const progress = [...this.progressdivs._results.map(elementRef => { return elementRef.nativeElement })]
 
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+        this.title.nativeElement.style.visibility = 'hidden'
+        this.firstrow.nativeElement.style.visibility = 'hidden'
+        this.secondrow.nativeElement.style.visibility = 'hidden'
         if (pageYOffset > 230) {
           this.title.nativeElement.style.visibility = 'visible'
           this.title.nativeElement.classList.add('slidedown');
