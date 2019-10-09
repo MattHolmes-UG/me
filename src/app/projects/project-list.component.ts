@@ -6,8 +6,8 @@ import { ProjectService } from '../services/projects.service';
   templateUrl: './project-list.component.html',
   styles: [`
     // img {min-width: 50%; height: 23em; display: block; margin: auto;}
-    .img-cont {margin: 2em 0 1em 0; min-height: 21em; width: 100%;
-      background-size: cover; backround-position: center;}
+    .img-cont {margin: 2em 0 1em 0; height: 21em; width: 100%;
+      background-size: cover; backround-position: center; cursor: pointer;}
     .container {margin-bottom: 4em;}
     .caption {font-size: 1em; color: rgb(80, 64, 231);}
     .col-lg-6, .col-md-6, .col-sm-12 {padding-left: 3px; padding-right: 3px;}
@@ -15,11 +15,12 @@ import { ProjectService } from '../services/projects.service';
     h2 {margin-bottom: 1em;}
     * {text-align: center;}
     a {text-decoration: none; color: rgb(80, 64, 231);}
-    @media screen and (max-width: 999px){img {height: auto;}}
+    @media screen and (max-width: 999px and min-width: 480px){.img-cont {height: auto;}}
     @media screen and (max-width: 480px){
       h3 {font-size: 1.2em;}
       h2 {font-size: 1.5em;}
       .caption {font-size: 0.75em;}
+      .img-cont {height: 13em;}
     }
   `]
 })
@@ -33,27 +34,29 @@ export class ProjectListComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
   ngOnInit() {
-    window.addEventListener('scroll', () => {
-      const arr = this.projectsdiv._results.map(elementRef => { return elementRef.nativeElement });
-      this.title.nativeElement.style.visibility = 'hidden'
-      arr.forEach(element => {
-        element.style.visibility = 'hidden'
-      });
-      if (pageYOffset > 1300) {
-        this.title.nativeElement.style.visibility = 'visible'
-        this.title.nativeElement.classList.add('slidefromleft');
-      }
-      if (pageYOffset > 1490) {
-        arr.forEach((element, index) => {
-          if (index % 2 === 0) {
-            element.style.visibility = 'visible';
-            element.classList.add('slidefromright');
-          } else {
-            element.style.visibility = 'visible';
-            element.classList.add('slidefromleft');
-          }
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+      window.addEventListener('scroll', () => {
+        const arr = this.projectsdiv._results.map(elementRef => { return elementRef.nativeElement });
+        this.title.nativeElement.style.visibility = 'hidden'
+        arr.forEach(element => {
+          element.style.visibility = 'hidden'
         });
-      }
-    })
+        if (pageYOffset > 1300) {
+          this.title.nativeElement.style.visibility = 'visible'
+          this.title.nativeElement.classList.add('slidefromleft');
+        }
+        if (pageYOffset > 1490) {
+          arr.forEach((element, index) => {
+            if (index % 2 === 0) {
+              element.style.visibility = 'visible';
+              element.classList.add('slidefromright');
+            } else {
+              element.style.visibility = 'visible';
+              element.classList.add('slidefromleft');
+            }
+          });
+        }
+      })
+    }
   }
 }

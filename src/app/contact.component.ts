@@ -18,32 +18,34 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
     }
   `]
 })
-export class ContactComponent implements OnInit{
+export class ContactComponent implements OnInit {
   @ViewChild('title') title: ElementRef
   @ViewChild('message') message: ElementRef
   @ViewChild('row1') row1: ElementRef
   @ViewChild('row2') row2: ElementRef
 
   ngOnInit() {
-    this.title.nativeElement.style.visibility = 'hidden'
-    this.message.nativeElement.style.visibility = 'hidden'
-    this.row1.nativeElement.style.visibility = 'hidden'
-    this.row2.nativeElement.style.visibility = 'hidden'
-    window.addEventListener('scroll', () => {
-      if (pageYOffset > 2340) {
-        this.title.nativeElement.style.visibility = 'visible'
-        this.title.nativeElement.classList.add('slidefromleft')
-      }
-      if (pageYOffset > 2420) {
-        this.message.nativeElement.style.visibility = 'visible'
-        this.message.nativeElement.classList.add('slidefromleft')
-      }
-      if (pageYOffset > 2550) {
-        this.row1.nativeElement.style.visibility = 'visible'
-        this.row1.nativeElement.classList.add('slideup')
-        this.row2.nativeElement.style.visibility = 'visible'
-        this.row2.nativeElement.classList.add('slidefromright')
-      }
-    })
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+      this.title.nativeElement.style.visibility = 'hidden'
+      this.message.nativeElement.style.visibility = 'hidden'
+      this.row1.nativeElement.style.visibility = 'hidden'
+      this.row2.nativeElement.style.visibility = 'hidden'
+      window.addEventListener('scroll', () => {
+        if (pageYOffset > 2340) {
+          this.title.nativeElement.style.visibility = 'visible'
+          this.title.nativeElement.classList.add('slidefromleft')
+        }
+        if (pageYOffset > 2420) {
+          this.message.nativeElement.style.visibility = 'visible'
+          this.message.nativeElement.classList.add('slidefromleft')
+        }
+        if (pageYOffset > 2550) {
+          this.row1.nativeElement.style.visibility = 'visible'
+          this.row1.nativeElement.classList.add('slideup')
+          this.row2.nativeElement.style.visibility = 'visible'
+          this.row2.nativeElement.classList.add('slidefromright')
+        }
+      })
+    }
   }
 }

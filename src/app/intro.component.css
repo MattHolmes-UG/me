@@ -31,7 +31,7 @@ button {
   background: rgba(92, 75, 243, 0.5);
   font-size: 1.3em;
   animation-name: 'slideup';
-  animation-duration: 1s;
+  animation-duration: 0.7s;
   animation-timing-function: ease;
   animation-delay: 3s;
 }
@@ -41,7 +41,7 @@ button:hover {
 }
 h1 {
   animation-name: 'slidedown';
-  animation-duration: 1.2s;
+  animation-duration: 1s;
 }
 @media screen and (max-width: 760px){
   .intro-container {

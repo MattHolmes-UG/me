@@ -52,7 +52,7 @@ h2 {
 /* includes one delay factor */
 .slidefromleft { 
   animation-name: 'movefromleft';
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-delay: 0s;
 }
 .slidefromleft1 { 
@@ -72,7 +72,7 @@ h2 {
 }
 .slidefromright { 
   animation-name: 'movefromright';
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-delay: 0s;
 }
 .slidefromright1 { 

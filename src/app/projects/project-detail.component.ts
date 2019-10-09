@@ -9,9 +9,10 @@ import { ActivatedRoute } from '@angular/router';
     <div class="project-container">
       <a class="link" [href]=project.link><h2>{{project.title}}</h2></a>
       <slider [responsiveObj]="responsiveObj" [slides]="slides"></slider>
-      <p>{{project.description}}</p><br>
+      <p class="description">{{project.description}} <a [href]="project.link" target="_blank" class="link"
+        >Click to go to site</a></p><br>
       <div class="toollist">
-        <span>Some of the design tools used in the project include: </span><br>
+        <span class="listtext">Some design tools used in the project include: </span><br>
         <ul>
           <li *ngFor="let designtool of project.designtools" class="col-sm-4 col-xs-6">{{designtool}}</li>
         </ul>
@@ -21,9 +22,9 @@ import { ActivatedRoute } from '@angular/router';
   styles: [`
     * {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
     h2 {margin: 0; font-variant: small-caps;}
-    p {margin-left: 2em; font-size: 1.1em;}
+    .description {margin-left: 2em; font-size: 1.1em; margin-top: 1em;}
     .toollist {font-variant: small-caps; padding-bottom: 6em !important;}
-    span {margin-left: 2em; font-size: 1.3em; padding: 0.8em 0;}
+    .listtext {margin-left: 2em; font-size: 1.3em; padding: 0.8em 0;}
     ul {list-style-type: circle; margin: 1em 1em 2em;}
     li {margin-bottom: 1em;}
     .link {color: black;}

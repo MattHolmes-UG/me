@@ -19,17 +19,17 @@ const PROJECTS = [
     title: 'Therapy.com',
     imageUrl: '/assets/therapy1.PNG',
     link: '#',
-    description: 'Website for online therapy with nodejs',
+    description: 'Website for online therapy built in nodejs. It offers an in-app chat between doctor and patient.',
     designtools: ['NodeJS','HTML5','CSS3','ES6','MongoDB'],
-    images: ['/assets/therapy.PNG', '/assets/therapy1.PNG', '/assets/therapy2.PNG', '/assets/therapy3.PNG']
+    images: ['/assets/therapy1.PNG', '/assets/therapy2.PNG', '/assets/therapy3.PNG']
   },
   {
     id: 2,
-    title: 'mattholmes-ug.com',
+    title: 'mattholmes.herokuapp.com',
     imageUrl: '/assets/portfolio.PNG',
-    link: 'https://mattholmes-ug.github.io/me',
-    description: 'Portfolio site Built with Angular',
-    designtools: ['Angular', 'HTML5', 'CSS3', 'ES6', 'Bootstrap', 'Owl Carousel', 'JQuery'],
+    link: 'https://mattholmes.herokuapp.com',
+    description: 'A single page portfolio web app built with angular and nodejs. It also incorporates features from bootstrap framework.',
+    designtools: ['Angular', 'HTML5', 'CSS3', 'Javascript', 'ES6', 'Bootstrap', 'Owl Carousel', 'JQuery', 'Heroku', 'Nodejs'],
     images: ['/assets/portfolio.PNG', '/assets/portfolio1.PNG', '/assets/portfolio2.PNG', '/assets/portfolio3.PNG']
   },
   // {
@@ -46,8 +46,8 @@ const PROJECTS = [
     title: 'Scientific calculator',
     imageUrl: '/assets/calc2.PNG',
     link: 'https://mattholmes-ug.github.io/Scientific-Calc',
-    description: 'Scientific calculator build with pure javascript',
-    designtools: ['HTML5', 'CSS3', 'ES6', 'Bootstrap', 'Regular Expressions'],
+    description: 'Scientific calculator build with pure javascript. It handles basic and advanced mathematical calculations. It also has options for simultaneous and quadratic equations, as well as, areas of both 2D and 3D shapes and the mean of a group of numbers.',
+    designtools: ['HTML5', 'CSS3', 'ES6', 'Bootstrap', 'Javascript'],
     images: ['/assets/calc.PNG', '/assets/calc1.PNG', '/assets/calc2.PNG', '/assets/calc3.PNG', '/assets/calc4.PNG']
   }
 ]

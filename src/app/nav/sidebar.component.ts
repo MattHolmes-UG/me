@@ -38,12 +38,14 @@ export class SideNavComponent implements OnInit {
     const link = this.links._results
     this.menuOn = !this.menuOn
     if (this.menuOn !== null) {
-      this.navEl.classList.toggle('anti-slant');
       link[0].nativeElement.classList.toggle('slidefromleft')
       link[1].nativeElement.classList.toggle('slidefromright')
       link[2].nativeElement.classList.toggle('slidefromleft')
       link[3].nativeElement.classList.toggle('slidefromright')
-      this.bodyEl.classList.toggle('slant');
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+        this.navEl.classList.toggle('anti-slant');
+        this.bodyEl.classList.toggle('slant');
+      }
     }
     return this.menuOn
   }

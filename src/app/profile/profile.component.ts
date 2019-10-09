@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { ProjectService } from '../services/projects.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'profile',
@@ -30,7 +31,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService, private router: Router) {
 
   }
 
@@ -44,39 +45,31 @@ export class ProfileComponent implements OnInit {
     window.addEventListener('scroll', () => {
       const progress = [...this.progressdivs._results.map(elementRef => { return elementRef.nativeElement })]
 
-      if (pageYOffset > 230) {
-        this.title.nativeElement.style.visibility = 'visible'
-        this.title.nativeElement.classList.add('slidedown');
-      }
-      if (pageYOffset > 440) {
-        this.firstrow.nativeElement.childNodes[0].style.visibility = 'visible'
-        this.firstrow.nativeElement.childNodes[1].style.visibility = 'visible'//just for fun
-        this.designs.nativeElement.childNodes[0].classList.add('slideup');
-        this.designs.nativeElement.childNodes[1].classList.add('slidedown');
-        this.designs.nativeElement.childNodes[2].classList.add('slideup');
-        this.mypic.nativeElement.classList.add('slidefromleft');
-      }
-      if (pageYOffset > 910) {
-        this.skilldiv.nativeElement.style.visibility = 'visible'
-        this.slide.nativeElement.style.visibility = 'visible'
-        this.skilldiv.nativeElement.classList.add('slidefromleft');
-        this.slide.nativeElement.classList.add('slideup');
-        progress.forEach(bar => {
-          bar.classList.add('progressSlide');
-        })
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+        if (pageYOffset > 230) {
+          this.title.nativeElement.style.visibility = 'visible'
+          this.title.nativeElement.classList.add('slidedown');
+        }
+        if (pageYOffset > 440) {
+          this.firstrow.nativeElement.childNodes[0].style.visibility = 'visible'
+          this.firstrow.nativeElement.childNodes[1].style.visibility = 'visible'//just for fun
+          this.designs.nativeElement.childNodes[0].classList.add('slideup');
+          this.designs.nativeElement.childNodes[1].classList.add('slidedown');
+          this.designs.nativeElement.childNodes[2].classList.add('slideup');
+          this.mypic.nativeElement.classList.add('slidefromleft');
+        }
+        if (pageYOffset > 910) {
+          this.skilldiv.nativeElement.style.visibility = 'visible'
+          this.slide.nativeElement.style.visibility = 'visible'
+          this.skilldiv.nativeElement.classList.add('slidefromleft');
+          this.slide.nativeElement.classList.add('slideup');
+          progress.forEach(bar => {
+            bar.classList.add('progressSlide');
+          })
+        }
       }
     })
   }
-  // startslides() {
-    
-  //   setInterval(() => {
-  //     if (this.index >= slides.length) this.index = 0
-  //     if (this.index < slides.length) {
-  //       this.preview.src = slides[this.index]
-  //     }
-  //     this.index += 1
-  //   }, 6000);
-  // }
 }
 const SKILLS = [
   {
