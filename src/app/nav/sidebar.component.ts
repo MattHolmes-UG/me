@@ -27,26 +27,31 @@ export class SideNavComponent implements OnInit {
   navs: any
   private bodyEl: any = document.body
   private navEl: HTMLElement
+  private isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)
   constructor(ref: ElementRef, private projectService: ProjectService) {
     this.navEl = ref.nativeElement
   }
 
   ngOnInit() {
     this.navs = this.projectService.getNavLinks();
+    if (this.isMobile) {
+      this.menuicon.nativeElement.style.display = 'none'
+      this.navEl.style.display = 'none'
+    }
   }
 
   toggleMenu() {
     const link = this.links._results
     this.menuOn = !this.menuOn
     if (this.menuOn !== null) {
-      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+      if (!this.isMobile) {
         link[0].nativeElement.classList.toggle('slidefromleft')
         link[1].nativeElement.classList.toggle('slidefromright')
         link[2].nativeElement.classList.toggle('slidefromleft')
         link[3].nativeElement.classList.toggle('slidefromright')
         this.navEl.classList.toggle('anti-slant');
         this.bodyEl.classList.toggle('slant');
-      } else { this.menuicon.nativeElement.style.display = 'none' }
+      }
     }
     return this.menuOn
   }

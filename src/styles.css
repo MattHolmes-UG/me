@@ -57,18 +57,13 @@ h2 {
 }
 .slidefromleft1 { 
   animation-name: 'movefromleft';
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-delay: 1s;
 }
 .slidefromleft2 {
   animation-name: 'movefromleft';
   animation-duration: 1s;
   animation-delay: 3.0s;
-}
-.slidefromleft3 {
-  animation-name: 'movefromleft';
-  animation-duration: 1s;
-  animation-delay: 3s;
 }
 .slidefromright { 
   animation-name: 'movefromright';
@@ -77,18 +72,13 @@ h2 {
 }
 .slidefromright1 { 
   animation-name: 'movefromright';
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-delay: 1s;
 }
 .slidefromright2 {
   animation-name: 'movefromright';
   animation-duration: 1s;
   animation-delay: 3.0s;
-}
-.slidefromright3 {
-  animation-name: 'movefromright'; 
-  animation-duration: 1s;
-  animation-delay: 3s;  
 }
 .invisible1 {
   animation-name: 'invisible';
