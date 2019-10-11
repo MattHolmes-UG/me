@@ -2,6 +2,8 @@
   background-color: rgb(24, 23, 23);
   background-image: url('/assets/intro.jpg');
   background-blend-mode: overlay;
+  /* background-position: center; */
+  /* background-size: cover; */
   height: 100vh;
   color: #fff;
   text-align: center;

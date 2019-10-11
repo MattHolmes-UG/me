@@ -35,16 +35,16 @@ export class NavBarComponent implements OnInit {
           nav[0].classList.add('active')
         } else if (pageYOffset > 500 && pageYOffset < 1500) {
           nav[1].classList.add('active')
-        } else if (pageYOffset > 1500 && pageYOffset < 2480) {
+        } else if (pageYOffset > 1500 && pageYOffset < 1950) {
           nav[2].classList.add('active')
-        } else if (pageYOffset > 2480) {
+        } else if (pageYOffset > 1950) {
           nav[3].classList.add('active')
         }
       }
       if (pageYOffset > window.innerHeight) {
-        this.navdiv.nativeElement.classList.add('fixed');
-      }
-      else this.navdiv.nativeElement.classList.remove('fixed');
+          this.navdiv.nativeElement.classList.add('fixed');
+        }
+        else this.navdiv.nativeElement.classList.remove('fixed');
     })
   }
 }

@@ -7,7 +7,7 @@ import { ProjectService } from '../services/projects.service';
   styles: [`
     // img {min-width: 50%; height: 23em; display: block; margin: auto;}
     .img-cont {margin: 2em 0 1em 0; height: 21em; width: 100%;
-      background-size: cover; backround-position: center; cursor: pointer;}
+      background-size: cover; background-position: center; cursor: pointer;}
     .container {margin-bottom: 4em;}
     .caption {font-size: 1em; color: rgb(80, 64, 231);}
     .col-lg-6, .col-md-6, .col-sm-12 {padding-left: 3px; padding-right: 3px;}
@@ -20,16 +20,15 @@ import { ProjectService } from '../services/projects.service';
       h3 {font-size: 1.2em;}
       h2 {font-size: 1.5em;}
       .caption {font-size: 0.75em;}
-      .img-cont {height: 13em;}
-    }
-    #container {width: 100%; height: 100vh; background-color: red; opacity: 0.5; position: absolute;
-      top: 0; left: 0; z-index: 4;}
+      .img-cont {height: 13em;}}
+    
   `]
 })
 
 export class ProjectListComponent implements OnInit {
   projects: any
   @ViewChildren('projects') projectsdiv: any
+  @ViewChildren('project') projectdivs: any
   @ViewChild('title') title: ElementRef
 
   constructor(private projectService: ProjectService) {

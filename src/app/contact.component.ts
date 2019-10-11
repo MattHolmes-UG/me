@@ -31,15 +31,15 @@ export class ContactComponent implements OnInit {
       this.row1.nativeElement.style.visibility = 'hidden'
       this.row2.nativeElement.style.visibility = 'hidden'
       window.addEventListener('scroll', () => {
-        if (pageYOffset > 2340) {
+        if (pageYOffset > 1950) {
           this.title.nativeElement.style.visibility = 'visible'
           this.title.nativeElement.classList.add('slidefromleft')
         }
-        if (pageYOffset > 2420) {
+        if (pageYOffset > 1990) {
           this.message.nativeElement.style.visibility = 'visible'
           this.message.nativeElement.classList.add('slidefromleft')
         }
-        if (pageYOffset > 2550) {
+        if (pageYOffset > 2120) {
           this.row1.nativeElement.style.visibility = 'visible'
           this.row1.nativeElement.classList.add('slideup')
           this.row2.nativeElement.style.visibility = 'visible'

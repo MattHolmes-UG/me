@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'project-detail',
   template: `
     <div class="project-container">
+      <a [routerLink]="['/']" fragment='projects'><div class="returnLink">&lArr; Return to Projects</div></a>
       <a class="link" [href]=project.link><h2>{{project.title}}</h2></a>
       <slider [responsiveObj]="responsiveObj" [slides]="slides"></slider>
       <p class="description">{{project.description}} <a [href]="project.link" target="_blank" class="link"
@@ -17,7 +18,6 @@ import { ActivatedRoute } from '@angular/router';
         </ul>
       <div>
     </div>
-    <div id='container'></div>
   `,
   styles: [`
     * {font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
@@ -29,9 +29,10 @@ import { ActivatedRoute } from '@angular/router';
     ul {list-style-type: circle; margin: 0.2em 1em 2em;}
     li {margin-bottom: 1em;}
     .link {color: black;}
-    @media screen and (max-width: 480){padding-left: 0;}
-    #container {width: 100vw; height: 100vh; background-color: black; opacity: 0.5; position: absolute;
-      top: 0; z-index: 6;}
+    .returnLink {position: absolute; top: 2em; left: 1em; font-weight: bold; background-color: rgb(24,23,23);
+      padding: 1em; color: white; opacity: 0.8;}
+    .returnLink:hover {opacity: 1;}
+    // @media screen and (max-width: 480){padding-left: 0;}
   `]
 })
 

@@ -14,19 +14,22 @@ export class ProjectService {
   getNavLinks() {
     return NAVS
   }
+  getSkills() {
+    return SKILLS
+  }
 }
 const PROJECTS = [
+  // {
+  //   id: 1,
+  //   title: 'Therapy.com',
+  //   imageUrl: '/assets/therapy1.PNG',
+  //   link: '#',
+  //   description: 'Website for online therapy built in nodejs. It offers an in-app chat between doctor and patient.',
+  //   designtools: ['NodeJS','HTML5','CSS3','ES6','MongoDB'],
+  //   images: ['/assets/therapy1.PNG', '/assets/therapy2.PNG', '/assets/therapy3.PNG']
+  // },
   {
     id: 1,
-    title: 'Therapy.com',
-    imageUrl: '/assets/therapy1.PNG',
-    link: '#',
-    description: 'Website for online therapy built in nodejs. It offers an in-app chat between doctor and patient.',
-    designtools: ['NodeJS','HTML5','CSS3','ES6','MongoDB'],
-    images: ['/assets/therapy1.PNG', '/assets/therapy2.PNG', '/assets/therapy3.PNG']
-  },
-  {
-    id: 2,
     title: 'mattholmes.herokuapp.com',
     imageUrl: '/assets/portfolio.PNG',
     link: 'https://mattholmes.herokuapp.com',
@@ -44,7 +47,7 @@ const PROJECTS = [
   //     'NodeJS', 'MongoDB']
   // },
   {
-    id: 3,
+    id: 2,
     title: 'Scientific calculator',
     imageUrl: '/assets/calc2.PNG',
     link: 'https://mattholmes-ug.github.io/Scientific-Calc',
@@ -58,5 +61,35 @@ const NAVS = [
   { title: 'About Me', href: 'about' },
   { title: 'Projects', href: 'projects' },
   { title: 'Contact Me', href: 'contact' }
+]
+const SKILLS = [
+  {
+    title: 'HTML',
+    percentage: '80%'
+  },
+  {
+    title: 'CSS',
+    percentage: '70%'
+  },
+  {
+    title: 'JavaScript',
+    percentage: '85%'
+  },
+  {
+    title: 'Nodejs',
+    percentage: '70%'
+  },
+  {
+    title: 'MongoDB',
+    percentage: '65%'
+  },
+  {
+    title: 'Angular',
+    percentage: '70%'
+  },
+  {
+    title: 'Bootstrap',
+    percentage: '70%'
+  }
 ]
 // https://mattholmes-ug.github.io/me/UX.4647adaa550cfda052f0.jpg

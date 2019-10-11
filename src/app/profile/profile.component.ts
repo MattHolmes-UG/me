@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.tools = SKILLS
+    this.tools = this.projectService.getSkills()
     this.slides = this.projectService.getProjects().map(project => project.imageUrl).reverse();
     this.preview = this.slide.nativeElement.childNodes[0];
     window.addEventListener('scroll', () => {
@@ -71,33 +71,3 @@ export class ProfileComponent implements OnInit {
     })
   }
 }
-const SKILLS = [
-  {
-    title: 'HTML',
-    percentage: '80%'
-  },
-  {
-    title: 'CSS',
-    percentage: '70%'
-  },
-  {
-    title: 'JavaScript',
-    percentage: '85%'
-  },
-  {
-    title: 'Nodejs',
-    percentage: '70%'
-  },
-  {
-    title: 'MongoDB',
-    percentage: '65%'
-  },
-  {
-    title: 'Angular',
-    percentage: '70%'
-  },
-  {
-    title: 'Bootstrap',
-    percentage: '70%'
-  }
-]
