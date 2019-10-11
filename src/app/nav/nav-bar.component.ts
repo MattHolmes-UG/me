@@ -42,9 +42,9 @@ export class NavBarComponent implements OnInit {
         }
       }
       if (pageYOffset > window.innerHeight) {
-          this.navdiv.nativeElement.classList.add('fixed');
-        }
-        else this.navdiv.nativeElement.classList.remove('fixed');
+        this.navdiv.nativeElement.classList.add('fixed');
+      }
+      else this.navdiv.nativeElement.classList.remove('fixed');
     })
   }
 }

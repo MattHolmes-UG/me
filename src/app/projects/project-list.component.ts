@@ -22,6 +22,8 @@ import { ProjectService } from '../services/projects.service';
       .caption {font-size: 0.75em;}
       .img-cont {height: 13em;}
     }
+    #container {width: 100%; height: 100vh; background-color: red; opacity: 0.5; position: absolute;
+      top: 0; left: 0; z-index: 4;}
   `]
 })
 

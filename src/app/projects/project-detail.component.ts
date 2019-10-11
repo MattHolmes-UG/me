@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'project-detail',
   template: `
-    <nav-bar></nav-bar>
     <div class="project-container">
       <a class="link" [href]=project.link><h2>{{project.title}}</h2></a>
       <slider [responsiveObj]="responsiveObj" [slides]="slides"></slider>
@@ -18,9 +17,11 @@ import { ActivatedRoute } from '@angular/router';
         </ul>
       <div>
     </div>
+    <div id='container'></div>
   `,
   styles: [`
     * {font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    .project-container {margin-top: 2em;}
     h2 {margin: 0; font-variant: small-caps;}
     .description {margin-left: 1em; font-size: 1em; margin-top: 1em;}
     .toollist {font-variant: small-caps; padding-bottom: 6em !important;}
@@ -29,6 +30,8 @@ import { ActivatedRoute } from '@angular/router';
     li {margin-bottom: 1em;}
     .link {color: black;}
     @media screen and (max-width: 480){padding-left: 0;}
+    #container {width: 100vw; height: 100vh; background-color: black; opacity: 0.5; position: absolute;
+      top: 0; z-index: 6;}
   `]
 })
 

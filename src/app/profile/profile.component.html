@@ -31,14 +31,14 @@
   </div>
   <div class="row" #row2>
     <div class="col-md-6 skills" #skills>
-      <div class="skill-container d-inline-flex">
-        <span class="label">HTML</span>
-        <em>80%</em>
+      <div class="skill-container d-inline-flex" *ngFor='let tool of tools'>
+        <span class="label">{{tool.title}}</span>
+        <em>{{tool.percentage}}</em>
         <div class="progress skill" #progress>
-          <span class="progress-bar progress-bar-animated" style="width: 80%"></span>
+          <span class="progress-bar progress-bar-animated" [style.width]=tool.percentage></span>
         </div>
       </div>
-      <div class="skill-container d-inline-flex">
+      <!-- <div class="skill-container d-inline-flex">
         <span class="label">CSS</span>
         <em>70%</em>
         <div class="progress skill" #progress>
@@ -61,9 +61,9 @@
       </div>
       <div class="skill-container d-inline-flex">
         <span class="label">MongoDB</span>
-        <em>70%</em>
+        <em>65%</em>
         <div class="progress skill" #progress>
-          <span class="progress-bar progress-bar-animated" style="width: 70%"></span>
+          <span class="progress-bar progress-bar-animated" style="width: 65%"></span>
         </div>
       </div>
       <div class="skill-container d-inline-flex">
@@ -79,7 +79,7 @@
         <div class="progress skill" #progress>
           <span class="progress-bar progress-bar-animated" style="width: 75%;"></span>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="col-md-6 slide col-xs-12" #slide>
       <slider [slides]="slides" [responsiveObj]="responsiveObj"></slider>

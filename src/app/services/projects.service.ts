@@ -4,6 +4,8 @@ import { Subject } from 'rxjs';
 @Injectable()
 export class ProjectService {
   getProjects() {
+    // let subject = new Subject()
+    // subject.next(PROJECTS)
     return PROJECTS
   }
   getProject(id:number) {

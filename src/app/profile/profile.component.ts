@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   @ViewChild('skills') skilldiv: ElementRef
   @ViewChild('slide') slide: ElementRef
   preview: any
+  tools: any
   slides: any
   index: number = 0
   responsiveObj = {
@@ -32,10 +33,10 @@ export class ProfileComponent implements OnInit {
   }
 
   constructor(private projectService: ProjectService, private router: Router) {
-
   }
-
+  
   ngOnInit() {
+    this.tools = SKILLS
     this.slides = this.projectService.getProjects().map(project => project.imageUrl).reverse();
     this.preview = this.slide.nativeElement.childNodes[0];
     window.addEventListener('scroll', () => {
@@ -73,30 +74,30 @@ export class ProfileComponent implements OnInit {
 const SKILLS = [
   {
     title: 'HTML',
-    percentage: '80'
+    percentage: '80%'
   },
   {
     title: 'CSS',
-    percentage: '70'
+    percentage: '70%'
   },
   {
     title: 'JavaScript',
-    percentage: '90'
+    percentage: '85%'
   },
   {
     title: 'Nodejs',
-    percentage: '80'
+    percentage: '70%'
   },
   {
     title: 'MongoDB',
-    percentage: '75'
+    percentage: '65%'
   },
   {
     title: 'Angular',
-    percentage: '70'
+    percentage: '70%'
   },
   {
     title: 'Bootstrap',
-    percentage: '75'
+    percentage: '70%'
   }
 ]

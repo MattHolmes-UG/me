@@ -5,10 +5,26 @@
       <div [routerLink]="['projects', project.id]">
         <!-- <h3>{{project?.title}}</h3> -->
         <div class="img-cont" [style.background-image]="'url('+project.imageUrl+')'">
-          
+
         </div>
         <!-- <span class="caption">{{project?.description}}</span> -->
       </div>
     </div>
   </div>
+  <!-- <div id='container'></div> -->
 </div>
+<!-- <project-modal projectid=project.title *ngFor='let project of projects'>
+  <a class="link" [href]=project.link>
+    <h2>{{project.title}}</h2>
+  </a>
+  <slider [responsiveObj]="responsiveObj" [slides]=project.images></slider>
+  <p class="description">{{project.description}} <a [href]="project.link" target="_blank" class="link">Click to
+      go to
+      site</a></p>
+  <div class="toollist">
+    <span class="listtext">Some design tools used in the project include: </span><br>
+    <ul>
+      <li *ngFor="let designtool of project.designtools" class="col-sm-4 col-xs-6">{{designtool}}</li>
+    </ul>
+  </div>
+</project-modal> -->

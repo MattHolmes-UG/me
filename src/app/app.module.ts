@@ -8,7 +8,7 @@ import { HomeComponent } from './home.component';
 import { 
   ProjectDetailComponent,
   ProjectListComponent,
-  ProjectSliderComponent
+  ProjectSliderComponent,
  } from "./projects/index";
 import { NavBarComponent } from './nav/nav-bar.component';
 import { route } from './routes';
@@ -18,6 +18,7 @@ import { SideNavComponent } from './nav/sidebar.component';
 import { ContactComponent } from './contact.component';
 import { ProjectService } from './services/projects.service';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer.component';
 
 @NgModule({
   declarations: [
@@ -30,16 +31,20 @@ import { AppComponent } from './app.component';
     IntroPageComponent,
     SideNavComponent,
     ContactComponent,
+    FooterComponent,
     ProjectSliderComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(route, {anchorScrolling: 'enabled'}),
+    RouterModule.forRoot(route, {anchorScrolling: 'enabled',
+      onSameUrlNavigation: 'reload',
+      scrollPositionRestoration: "enabled"
+    }),
     BrowserAnimationsModule,
     OwlModule
   ],
   providers: [
-    ProjectService
+    ProjectService,
   ],
   bootstrap: [AppComponent]
 })
