@@ -18,7 +18,6 @@ import { SideNavComponent } from './nav/sidebar.component';
 import { ContactComponent } from './contact.component';
 import { ProjectService } from './services/projects.service';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { FooterComponent } from './footer.component';
     IntroPageComponent,
     SideNavComponent,
     ContactComponent,
-    FooterComponent,
     ProjectSliderComponent
   ],
   imports: [
