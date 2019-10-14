@@ -2,7 +2,7 @@
   width: 85%;
   height: 23em;
   background-color: rgb(24, 23, 23);
-  background-image: url('./../../assets/sherlock.jpg');
+  background-image: url('/assets/sherlock.jpg');
   background-clip: content-box;
   background-size: cover;
   background-position: center;
