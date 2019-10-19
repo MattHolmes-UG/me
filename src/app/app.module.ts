@@ -36,7 +36,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     RouterModule.forRoot(route, {anchorScrolling: 'enabled',
       onSameUrlNavigation: 'reload',
-      // scrollPositionRestoration: "enabled"
+      scrollPositionRestoration: "enabled"
     }),
     BrowserAnimationsModule,
     OwlModule
